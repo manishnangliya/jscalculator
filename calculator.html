@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <div>
+        <h2>Digital Calculator</h2>
+        <table border="0">
+            <tr>
+               <td colspan="3"> <input type="text" value = "" id="result"></td>
+                <td><input type="button" value="C" onclick="clear()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="appendd('1')"></td>
+                <td><input type="button" value="2" onclick="appendd('2')"></td>
+                <td><input type="button" value="3" onclick="appendd('3')"></td>
+                <td><input type="button" value="/" onclick="appendd('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="appendd('4')"></td>
+                <td><input type="button" value="5" onclick="appendd('5')"></td>
+                <td><input type="button" value="6" onclick="appendd('6')"></td>
+                <td><input type="button" value="-" onclick="appendd('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="appendd('7')"></td>
+                <td><input type="button" value="8" onclick="appendd('8')"></td>
+                <td><input type="button" value="9" onclick="appendd('9')"></td>
+                <td><input type="button" value="+" onclick="appendd('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="appendd('.')"></td>
+                <td><input type="button" value="0" onclick="appendd('0')"></td>
+                <td><input type="button" value="=" onclick="solve()"></td>
+                <td><input type="button" value="*" onclick="appendd('*')"></td>
+            </tr>
+        </table>
+    </div>
+</center>
+<script>
+    function clear()
+    {
+        document.getElementById("result").values = "";
+    }
+    function appendd(val)
+    {
+        document.getElementById("result").values += val;
+        // console.log(document.getElementById("result").values);
+    }
+    function solve()
+    {
+        var x = document.getElementById("result").values;
+        var y = eval(x);
+        document.getElementById("result").values = y;
+    }
+</script>
+</body>
+</html>
